@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- BS 4 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/roadtrip-validator-main.css">
+    <title></title>
+</head>
+<body>
+    <!-- Vue -->
+    <div id="vue1">
+
+<!-- -=-=-=-=-=-= Grid Hierarchy =-=-=-=-=-=- -->
+<!-- -=-=-=-=-= One Main Container =-=-=-=-=- -->
+<!-- -= Top, Middle, and Bottom Containers =- -->
+<!-- =-=-=-= Three Rows Per Container =-=-=-= -->
+<!--Three <div class="col-4"> Elements Per Row-->
+
+        <!-- Main Container -->
+        <div class='conatiner' id="main">
+
+            <!-- Optional Jumbotron -->
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-3">Road Trip Validator</h1>
+                    <p></p>
+                </div>
+            </div>
+            <!-- End Jumbotron -->
+
+
+            <!-- Top Container -->
+            <div class='container' id="top">
+
+                <!-- start row-1-t (row 1 top) -->
+                <div class='row justify-content-lg-center' id='row-1-t'> 
+
+                    <div style="text-align: center; padding: 0" class="col-lg-3">
+                        <div id="title" >Chips</div>
+                        <img id="chips" src="https://i5.walmartimages.com/asr/6b747355-36aa-4097-8576-a64d6bf5c2a8_1.badd6fc9a1ffc5c7373b4e49d900d270.jpeg">
+                        <div id="text">Cost: $1.20 Weight: 0.53 lb</div>
+                        <button v-on:click="addChips" id="addBttn">Add</button>
+                        <button v-on:click="removeChips" id="removeBttn">Remove</button>
+                        <div id="num" >Number of bags:   {{numChips}}</div>
+                        <div id="cost" >Cost of chips: ${{costChips}}</div>
+                        <div id="weight" >Weight of chips: {{weightChips}} lb</div>
+                    </div>
+
+                    <div style="text-align: center; padding: 0" class="col-lg-3">
+                        <div id="title" >5 Gal Gasoline</div>
+                        <img id="gas" src="http://futurelibraries.net/wp-content/uploads/2016/07/Gas-Can-CTD-TXT-250px-CLEAR-WEB-PNG24.png">
+                        <div id="text">Cost: $22.00 Weight: 22 lb</div>
+                        <button v-on:click="addGas" id="addBttn">Add</button>
+                        <button v-on:click="removeGas" id="removeBttn">Remove</button>
+                        <div id="num" >Number of containers: {{numGas}}</div>
+                        <div id="cost" >Cost of gas: ${{costGas}}</div>
+                        <div id="weight" >Weight of gas: {{weightGas}} lb</div>
+                    </div>
+
+                    <div style="text-align: center; padding: 0" class="col-lg-3">
+                        <div id="title" >1 Can Diet Dr.Pepper </div>
+                        <img id="drink" src="https://images-na.ssl-images-amazon.com/images/I/81FpNoe8sWL._SL1500_.jpg">
+                        <div id="text">Cost: $0.80 Weight: 0.75 lb</div>
+                        <button v-on:click="addCan" id="addBttn">Add</button>
+                        <button v-on:click="removeCan" id="removeBttn">Remove</button>
+                        <div id="num" >Number of cans: {{numCans}}</div>
+                        <div id="cost" >Cost of Dr. Pepper: ${{costCans}}</div>
+                        <div id="weight" >Weight of Dr. Pepper: {{weightCans}} lb</div>
+                    </div>
+
+                    <div style="text-align: center; padding: 0;" class="col-lg-3">
+                        <div id="title" >Candy</div>
+                        <img id="candy" src="https://www.dollartree.com/assets/product_images_2016/styles/xlarge/853069.jpg">
+                        <div id="text">Cost: $1.25 Weight: 0.5 lb</div>
+                        <button v-on:click="addCandy" id="addBttn">Add</button>
+                        <button v-on:click="removeCandy" id="removeBttn">Remove</button>
+                        <div id="num" >Number of items: {{numCandy}}</div>
+                        <div id="cost" >Cost of candy: ${{costCandy}}</div>
+                        <div id="weight" >Weight of candy: {{weightCandy}} lb</div>
+                    </div>
+
+                </div> 
+                <!-- end row-1-t -->
+
+                <!-- start row-2-t -->
+                <div class='row justify-content-lg-center' id='row-2-t'>
+                    <div style="text-align: center;" id="bottomResults" class="col-lg-6">
+                        <div id="results" >Total money remaining: ${{totMonRem}}</div>
+                        <div id="results" >Total money spent: ${{totMonSpent}}</div>
+                        <button id="validateBttn" v-bind:class="{highlight: !isValid}" v-on:mouseover="valid" v-on:click="validate">Validate</button>
+                        
+                    </div>
+                    <div  id="bottomResults" class="col-lg-6">
+                        <div id="results" >Total weight: {{totWeight}} lb</div>
+                        <div id="results" >Total weight remaining: {{totWeightRem}} lb</div>
+                    </div>
+                </div>
+                <!-- end row-2-t -->
+                    
+                </div>
+                <!-- end row-3-t -->
+
+            </div>
+            <!-- End Top Container -->
+
+        </div> 
+        <!-- End Main Container -->
+
+    </div> 
+    <!-- End vue1 -->
+
+    <!-- Bootstrap JS -->
+         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+        </script>
+
+        <!-- Jquery -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+        <!-- Main JS -->
+        <script src="/js/roadtrip-validator-main.js"></script> 
+</body>
+</html>
+
+

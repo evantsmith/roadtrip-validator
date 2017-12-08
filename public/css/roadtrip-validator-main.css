@@ -1,0 +1,83 @@
+:root {
+font-size: 16px;
+}
+
+.row div {
+    border : 1px solid black;
+}
+h1 {
+    text-align: center;
+}
+
+#top {
+    height: 600px;
+}
+#text {
+    width: 100%;
+    text-align: center;
+    display: block;
+    border: none;
+}
+
+#title {
+    border: none;
+}
+#addBttn, #removeBttn {
+    display: inline-block;
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#validateBttn {
+    margin: 0 auto;
+    width: 20%;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#middle {
+    height: 600px;
+}
+.highlight {
+    border: 2px solid red;
+}
+
+#bottom {
+    height: 600px;
+}
+#row-1-t, #row-1-m, #row-1-b{
+    height: 70%;
+}
+
+#row-2-t, #row-2-m, #row-2-b{
+    height: 20rem;
+}
+
+#chips, #gas, #drink, #candy {
+    height: 50%;
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+#num {
+    margin-top: 10px;
+}
+#num, #cost, #weight {
+    border: none;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#results {
+    border: none;
+    height: 25%;
+    margin-top: 10px;
+    text-align: center;
+}
+#bottomResults {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
